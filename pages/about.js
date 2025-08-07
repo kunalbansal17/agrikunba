@@ -24,7 +24,7 @@ export default function About() {
 
       <div className="text-lg space-y-6 leading-8">
         <p>
-          <strong>AgriKunba</strong> is a collective of agripreneurs and IIT alumni committed to empowering the entire agriculture value chain. We believe agriculture isn’t just about the farmer in the field — it's a global family of warehouse workers, millers, processors, transporters, floriculturists, fisheries experts, and more.
+          <strong>AgriKunba</strong> is a collective of agripreneurs and IIT alumni committed to empowering the entire agriculture value chain. We believe agriculture is not just about the farmer in the field. its a global family of warehouse workers, millers, processors, transporters, floriculturists, fisheries experts, and more.
         </p>
 
         <p>
