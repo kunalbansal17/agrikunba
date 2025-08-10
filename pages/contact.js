@@ -99,7 +99,7 @@ export default function Contact() {
       <div className="max-w-2xl mx-auto">
         <h1 className="text-6xl font-bold text-center text-green-700">Contact Us</h1>
         <p className="mt-4 text-center text-gray-800">
-          We'd love to hear from you. Fill out the form below and we'll be in touch shortly.
+          We&rsquo;d love to hear from you. Fill out the form below and we&rsquo;ll be in touch shortly.
         </p>
 
         {submitted && (
