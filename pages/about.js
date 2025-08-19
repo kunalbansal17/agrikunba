@@ -1,72 +1,84 @@
-// File: pages/about.js
-import Navbar from "../components/navbar";
-import Footer from "../components/footer";
-
+// pages/about.js
 import Image from "next/image";
 import Head from "next/head";
 
 export default function About() {
   return (
-
-<main>{
-    <div className="max-w-6xl mx-auto px-6 py-6">
+    <>
       <Head>
         <title>About Us | AgriKunba</title>
       </Head>
 
-      <div className="mb-10">
-        <Image
-          src="/agriworkers.png"
-          alt="Agri Workers Graphic"
-          width={800}
-          height={350}
-          className="rounded-lg w-full"
-        />
-      </div>
-
-      <div className="text-lg space-y-6 leading-8">
-        <p>
-          <strong>AgriKunba</strong> means “agricultural family.” We are building this platform with every hand that grows, processes, transports, and sells; not just building for them. Born from the vision of agripreneurs and IIT alumni, AgriKunba is a collective committed to empowering the entire agriculture value chain. We believe agriculture is not just about the farmer in the field. it is a global ecosystem of warehouse workers, millers, processors, transporters, floriculturists, fisheries experts, and countless others. Together, we are building systems that honor their work, amplify their voices, and unlock the future of food.        </p>
-
-        <p>
-          Our platform is designed to be lightweight, rapidly deployable, and deeply integrated with offline ecosystems. With agriculture accounting for nearly 25% of the global workforce but only 4% of GDP in many regions, we see not a crisis, but an opportunity.
-        </p>
-
-        <p>
-          <u><strong>India By the Numbers (2024–25): </strong></u><br />
-          🥛 230 MT of milk production (World’s highest)<br />
-          🐄 307 Mn cattle (largest herd globally)<br />
-          🪺 138 Bn eggs (2nd largest producer)<br />
-          🐟 #3 in fisheries, 🐳 #2 in aquaculture<br />
-          🍎 ~11% of global fruit, 🥕 ~9% of vegetables
-        </p>
-
-        
-          <strong>Our Vision:</strong>
-          <div className="list-disc list-inside mt-2">
-            👩‍🌾 Empower every stakeholder in Agri Value Chain <br/>
-            📉 Build solutions that are fast to deploy and globally relevant <br/>
-            🔗 Integrate traditional know how with Digital Innovation <br/>
-            ♻️ Create a self reliant agri ecosystem driven by collaboration <br/>
+      <div className="px-6 pt-2 pb-6">
+        {/* Top image with tight spacing */}
+        <div className="mb-3">
+          <div className="relative w-full h-48 sm:h-100 overflow-hidden rounded-lg">
+            <Image
+              src="/agriworkers.png"
+              alt="Agri Workers Graphic"
+              fill
+              priority
+              className="object-cover"
+            />
           </div>
-       
+        </div>
 
-        <p>
-          <em>“Jo mitti se juda hai, wahi kal ko rachne wala hai.”</em> <br />
-          (Those rooted in the soil are the ones shaping tomorrow.)
-        </p>
-      </div>
+        <div className="text-lg space-y-5 leading-8">
+          <p>
+            <strong>AgriKunba</strong> means “agricultural family”; and that is what we are building.
+            Agriculture isn’t just farmers in fields, it’s a complex web of millers, processors, traders, 
+            warehouse operators, transporters, and exporters. Today this ecosystem runs on broken contracts,
+            disputes, and manual calls.
+          </p>
 
-      <div className="mt-12">
-        <Image
-          src="/collage.png"
-          alt="AgriKunba Activities"
-          width={954}
-          height={618}
-          className="rounded-lg w-full"
-        />
+          <p>
+            We’re changing that. AgriKunba is the contract &amp; settlement layer for trade, powered by
+            <strong> AI-driven smart contracts and traceability</strong>. Our platform flags risks,
+            automates settlement terms, and suggests optimal trade flows, so agri businesses can cut
+            losses, move faster, and build trust at scale.
+          </p>
+
+          <p>
+            Born from agripreneurs and IIT alumni, AgriKunba is the agri family’s AI backbone for
+            trade and settlement — practical, scalable, and built for the next decade of global
+            agriculture.
+          </p>
+
+          <p>
+            <u><strong>Indian agriculture at a glance (2024–25):</strong></u><br />
+            🥛 230 MT of milk production (World’s highest)<br />
+            🐄 307 Mn cattle (largest herd globally)<br />
+            🪺 138 Bn eggs (2nd largest producer)<br />
+            🐟 #3 in fisheries, 🐳 #2 in aquaculture<br />
+            🍎 ~11% of global fruit, 🥕 ~9% of vegetables
+          </p>
+<br/>
+          <div className="mt-2">
+            <strong>Our Vision:</strong>
+          </div>
+
+          {/* Vision Images Section (tighter gap) */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+            <div className="flex justify-center">
+              <Image src="/images/vision1.png" alt="Vision 1" width={250} height={250} className="rounded-lg shadow-md" />
+            </div>
+            <div className="flex justify-center">
+              <Image src="/images/vision2.png" alt="Vision 2" width={250} height={250} className="rounded-lg shadow-md" />
+            </div>
+            <div className="flex justify-center">
+              <Image src="/images/vision3.png" alt="Vision 3" width={250} height={250} className="rounded-lg shadow-md" />
+            </div>
+            <div className="flex justify-center">
+              <Image src="/images/vision4.png" alt="Vision 4" width={250} height={250} className="rounded-lg shadow-md" />
+            </div>
+          </div>
+<br/>
+          <p>
+            <em>“Jo mitti se juda hai, wahi kal ko rachne wala hai.”</em><br />
+            (Those rooted in the soil are the ones shaping tomorrow.)
+          </p>
+        </div>
       </div>
-    </div>
-}</main>
+    </>
   );
 }

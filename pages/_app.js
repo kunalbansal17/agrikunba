@@ -7,8 +7,9 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       <Navbar />
-            <main className="max-w-6xl mx-auto px-4 py-8"></main>
+            <main className="max-w-6xl mx-auto px-4 pt-2">
       <Component {...pageProps} />
+      </main>
       <Footer />
     </>
   );

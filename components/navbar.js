@@ -6,13 +6,13 @@ export default function Navbar() {
 
   return (
     <header className="bg-white">
-      <nav className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <nav className="w-full px-6 py-3 flex items-center justify-between">
         <Link href="/" className="text-2xl font-bold text-black">
           AgriKunba
         </Link>
 
         {/* Desktop */}
-        <div className="hidden md:flex items-center gap-6 text-sm text-black">
+        <div className="hidden md:flex items-center gap-7 text-sm text-black">
           <Link href="/" className="hover:underline">Home</Link>
           <Link href="/about" className="hover:underline">About</Link>
           <Link href="/products" className="hover:underline">Products</Link>
