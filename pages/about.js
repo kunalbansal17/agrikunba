@@ -26,9 +26,10 @@ export default function About() {
         <div className="text-lg space-y-5 leading-8">
           <p>
             <strong>AgriKunba</strong> means “agricultural family”; and that is what we are building.
-            Agriculture isn’t just farmers in fields, it’s a complex web of millers, processors, traders, 
+            Agriculture isn’t just farmers in fields, it’s a complex web of processors, traders, 
             warehouse operators, transporters, and exporters. Today this ecosystem runs on broken contracts,
-            disputes, and manual calls.
+            disputes, and manual calls. Fisheries, poultry and cattle farming are also integral parts of 
+            agriculture industry, often neglected as allied services.
           </p>
 
           <p>
@@ -58,18 +59,18 @@ export default function About() {
           </div>
 
           {/* Vision Images Section (tighter gap) */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             <div className="flex justify-center">
-              <Image src="/images/vision1.png" alt="Vision 1" width={250} height={250} className="rounded-lg shadow-md" />
+              <Image src="/images/vision1.png" alt="Vision 1" width={250} height={250} className="w-full h-auto max-w-[220px] sm:max-w-none rounded-lg shadow-md" />
             </div>
             <div className="flex justify-center">
-              <Image src="/images/vision2.png" alt="Vision 2" width={250} height={250} className="rounded-lg shadow-md" />
+              <Image src="/images/vision2.png" alt="Vision 2" width={250} height={250} className="w-full h-auto max-w-[220px] sm:max-w-none rounded-lg shadow-md" />
             </div>
             <div className="flex justify-center">
-              <Image src="/images/vision3.png" alt="Vision 3" width={250} height={250} className="rounded-lg shadow-md" />
+              <Image src="/images/vision3.png" alt="Vision 3" width={250} height={250} className="w-full h-auto max-w-[220px] sm:max-w-none rounded-lg shadow-md" />
             </div>
             <div className="flex justify-center">
-              <Image src="/images/vision4.png" alt="Vision 4" width={250} height={250} className="rounded-lg shadow-md" />
+              <Image src="/images/vision4.png" alt="Vision 4" width={250} height={250} className="w-full h-auto max-w-[220px] sm:max-w-none rounded-lg shadow-md" />
             </div>
           </div>
 <br/>
