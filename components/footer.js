@@ -2,12 +2,12 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-100 mt-0">
-      <div className="max-w-6xl mx-auto px-4 py-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-8 text-sm text-black">
-        {/* Brand */}
+   <footer className="bg-gray-50 border-t border-gray-200">
+  <div className="max-w-7xl mx-auto px-4 py-6 flex flex-col sm:flex-row items-start sm:items-center justify-between">
+     {/* Brand */}
         <div>
           <div className="text-xl font-bold">AgriKunba</div>
-          <p className="mt-2">A Full Stack Agri Platform</p>
+          <p>a full stack agri platform </p>
           <p className="mt-4">
             <a href="mailto:contact@agrikunba.com" className="underline">
               contact@agrikunba.com
@@ -64,17 +64,27 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Reserved space for infographic / image */}
-        <div className="flex items-start justify-end">
-          <div className="w-full sm:w-56 h-32 bg-white border border-gray-300 rounded flex items-center justify-center text-xs text-gray-600">
-            Infographic area
-          </div>
-        </div>
-      </div>
 
-      <div className="max-w-6xl mx-auto px-4 py-4 text-xs text-gray-700 text-center">
-        <span>© {new Date().getFullYear()} AgriKunba. All rights reserved.</span>
+
+ {/* Right side (infographic) */}
+    <div className="mt-4 sm:mt-0">
+      <div className="w-[310px] h-[170px] bg-white border border-gray-300 rounded overflow-hidden">
+        <img
+          src="/images/footer-infographic.png"
+          alt="AgriTech Infographic"
+          className="w-full h-full object-cover"
+        />
       </div>
+    </div>
+  </div>
+
+     {/* Bottom sticky line */}
+  <div className="border-t border-gray-200 py-3">
+    <p className="text-center text-sm text-gray-600">
+      © 2025 AgriKunba. All rights reserved.
+    </p>
+  </div>
+
     </footer>
   );
 }

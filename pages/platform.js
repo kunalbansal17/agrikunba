@@ -27,34 +27,35 @@ export default function Platform() {
         </div>
       </section>
 
-      {/* BENEFITS STRIP (full-bleed) */}
-      <section className="full-bleed bg-gray-50">
-        <div className="px-6 py-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
-            <div className="rounded-xl border border-gray-300 bg-white shadow-md rounded-lg p-5">
-              <h3 className="font-semibold text-black">CONNECTED STACK</h3>
-              <p className="mt-2 text-black/60">
-                Contracts, Quality, Traceability, and Settlement &mdash; One Stack. Use a single module or the full suite.
-              </p>
-            </div>
-            <div className="rounded-xl border border-gray-300 bg-white shadow-md rounded-lg p-5 ">
-              <h3 className="font-semibold text-black text-1xl">OUTCOME DRIVEN OPS</h3>
-              <p className="mt-2 text-black/60">
-                Fewer disputes, faster cash cycles, cleaner audit trails. Designed for measurable impact.
-              </p>
-            </div>
-            <div className="rounded-xl border border-gray-300 bg-white shadow-md rounded-lg p-5">
-              <h3 className="font-semibold text-black">ENTERPRISE GRADE. STARTUP FAST.</h3>
-              <p className="mt-2 text-black/60">
-                Formal workflows without friction. Simple interfaces, quick rollouts, real adoption.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+{/* BENEFITS STRIP (full-bleed) */}
+<section className="full-bleed bg-white hidden md:block">
+  <div className="px-6 py-8">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+      <div className="rounded-xl border border-gray-300 bg-white shadow-md p-5">
+        <h3 className="font-semibold text-black">CONNECTED STACK</h3>
+        <p className="mt-2 text-black/60">
+          Contracts, Quality, Traceability, and Settlement &mdash; One Stack. Use a single module or the full suite.
+        </p>
+      </div>
+      <div className="rounded-xl border border-gray-300 bg-white shadow-md p-5">
+        <h3 className="font-semibold text-black">OUTCOME DRIVEN OPS</h3>
+        <p className="mt-2 text-black/60">
+          Fewer disputes, faster cash cycles, cleaner audit trails. Designed for measurable impact.
+        </p>
+      </div>
+      <div className="rounded-xl border border-gray-300 bg-white shadow-md p-5">
+        <h3 className="font-semibold text-black">ENTERPRISE GRADE. STARTUP FAST.</h3>
+        <p className="mt-2 text-black/60">
+          Formal workflows without friction. Simple interfaces, quick rollouts, real adoption.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
 
       {/* 1) TECHNOLOGY PLATFORM (full-bleed) */}
-      <section id="tech" className="full-bleed bg-white">
+      <section id="tech" className="full-bleed bg-gray-50">
         <div className="px-6 pb-10">
           <div className="border rounded-xl bg-white overflow-hidden">
             {/* Optional visual/header area */}
@@ -91,12 +92,12 @@ export default function Platform() {
       </section>
 
       {/* 2) D2C — DHOORVI (full-bleed, finalized) */}
-      <section id="dhoorvi" className="full-bleed bg-gray-50">
-        <div className="px-6 py-12">
+      <section id="dhoorvi" className="full-bleed bg-white">
+        <div className="px-6 py-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
             {/* LEFT: CONTENT */}
             <div>
-              <h2 className="text-3xl font-semibold text-black">Dhoorvi &mdash; D2C Brand in Beauty Space</h2>
+              <h2 className="text-3xl font-semibold text-black">Dhoorvi™ &mdash; D2C Brand in Beauty Space</h2>
 
               <p className="mt-4 text-black/80">
                 Dhoorvi is our direct-to-consumer platform built around provenance. We identify sourcing gaps, partner with
@@ -169,16 +170,37 @@ export default function Platform() {
               <div className="relative">
                 <div className="flex gap-6 overflow-x-auto snap-x snap-mandatory pb-3">
                   {/* Slide 1 */}
-                  <div className="snap-center shrink-0 w-[26rem] h-72 md:w-[34rem] md:h-80 rounded-xl border border-gray-300 bg-white shadow-md flex items-center justify-center text-gray-600 text-sm font-medium">
-                    Products (flower teas / herbal powders) &mdash; placeholder
+      <div className="snap-center shrink-0 w-full max-w-xl h-96 md:max-w-3xl md:h-[30rem] rounded-xl border border-gray-300 bg-white shadow-md flex items-center justify-center text-gray-600 text-sm font-medium">
+              <img
+          src="/images/dhoorvi1.png"
+          alt="Dhoorvi 1"
+          className="w-full h-full object-cover"
+        />
                   </div>
                   {/* Slide 2 */}
-                  <div className="snap-center shrink-0 w-[26rem] h-72 md:w-[34rem] md:h-80 rounded-xl border border-gray-300 bg-white shadow-md flex items-center justify-center text-gray-600 text-sm font-medium">
-                    Community partnerships and market linkages &mdash; placeholder
+                       <div className="snap-center shrink-0 w-full max-w-xl h-96 md:max-w-3xl md:h-[30rem] rounded-xl border border-gray-300 bg-white shadow-md flex items-center justify-center text-gray-600 text-sm font-medium">
+              <img
+          src="/images/dhoorvi2.png"
+          alt="Dhoorvi 1"
+          className="w-full h-full object-cover"
+        />
                   </div>
                   {/* Slide 3 */}
-                  <div className="snap-center shrink-0 w-[26rem] h-72 md:w-[34rem] md:h-80 rounded-xl border border-gray-300 bg-white shadow-md flex items-center justify-center text-gray-600 text-sm font-medium">
-                    Branding and sustainable packaging &mdash; placeholder
+                   <div className="snap-center shrink-0 w-full max-w-xl h-96 md:max-w-3xl md:h-[30rem] rounded-xl border border-gray-300 bg-white shadow-md flex items-center justify-center text-gray-600 text-sm font-medium">
+              <img
+          src="/images/dhoorvi3.png"
+          alt="Dhoorvi 1"
+          className="w-full h-full object-cover"
+        />
+                  </div>
+
+                     {/* Slide 4 */}
+                   <div className="snap-center shrink-0 w-full max-w-xl h-96 md:max-w-3xl md:h-[30rem] rounded-xl border border-gray-300 bg-white shadow-md flex items-center justify-center text-gray-600 text-sm font-medium">
+              <img
+          src="/images/dhoorvi4.png"
+          alt="Dhoorvi 1"
+          className="w-full h-full object-cover"
+        />
                   </div>
                 </div>
               </div>
@@ -188,51 +210,77 @@ export default function Platform() {
         </div>
       </section>
 
-      {/* 3) B2B TRADING PLATFORM (full-bleed) */}
-      <section  id="tharena" className="full-bleed bg-white">
-        <div className="px-6 pb-10">
-          <div className="border rounded-xl bg-white overflow-hidden">
-            {/* Export-oriented banner */}
-            <div className="relative w-full h-48 md:h-60 bg-white border-b border-gray-200">
-              {/* <Image src="/images/platform/b2b-export.png" alt="B2B Trading Platform" fill className="object-cover" /> */}
-              <div className="h-full w-full flex items-center justify-center text-gray-600 text-sm">
-                Export-oriented image placeholder
-              </div>
-            </div>
+{/* 3) THARENA — B2B TRADE (full-bleed, refined) */}
+<section id="b2b" className="full-bleed bg-gray-50 ">
+  <p>.</p>
+  <div className="px-6 pb-12">
+    {/* Container with soft edge (tweak border/shadow as you like) */}
+    <div className="rounded-xl bg-white overflow-hidden shadow-sm border border-gray-200">
+      {/* Banner image — taller for impact */}
+   <div className="relative w-full h-56 md:h-72 rounded-lg border border-gray-300 bg-white shadow-sm overflow-hidden">
+  <Image
+    src="/images/tharena.jpg" // save the file here
+    alt="Tharena — Strategic B2B Agri Trade"
+    fill
+    priority
+    className="object-cover"
+  />
+</div>
+</div>
+      </div>
 
-            <div className="p-6 md:p-8 max-w-6xl mx-auto">
-              <h2 className="text-2xl font-semibold text-black">B2B Trading Platform - Tharena</h2>
-              <p className="mt-3 text-black/80">
-                A private, contract-linked marketplace for processors, exporters, FPOs, and verified buyers. Our team has on-ground
-                experience across domestic markets (pulses, fruits, grains), work with government agencies on procurement and
-                distribution, and export trade. We are built to handle volume and complexity.
-              </p>
-              <ul className="mt-4 list-disc list-inside text-black/80 space-y-1 text-sm">
-                <li>Invite-only RFQs and auctions with contract templates</li>
-                <li>Quality-linked pricing and clearly defined acceptance thresholds</li>
-                <li>Dispatch &rarr; delivered &rarr; accepted &rarr; settled &mdash; with audit trails</li>
-                <li>Team capable of handling large orders with operational discipline</li>
-              </ul>
+      {/* Content */}
+      <div className="px-6 pb-6 md:px-8 md:pb-8 max-w-6xl mx-auto">
+        <h2 className="text-2xl md:text-3xl font-semibold text-black">
+          Tharena — Strategic B2B Agri Trade
+        </h2>
 
-              <div className="mt-5">
-                <Link href="/contact?product=b2b-trading" className="bg-green-700 text-white px-4 py-2 rounded hover:bg-green-800">
-                  Run a pilot lane
-                </Link>
-              </div>
-            </div>
-          </div>
+        {/* Short naming note */}
+        <p className="mt-2 text-sm text-black/60">
+          Thar + Arena — the grit of the desert, the discipline of a trading floor.
+        </p>
+
+        <p className="mt-4 text-black/80">
+          Almost every agri-tech is, at its core, a trading play. We say it openly and we bring the experience to match.
+          Having executed bulk trades across pulses, cereals, grains, and fruits, we convert opportunities into executed
+          contracts and broker value where alignment wins.
+        </p>
+
+        <p className="mt-3 text-black/80">
+          Trade isn’t an afterthought for us; it’s the foundation. If you can’t decode the trade, you can’t solve the ecosystem.
+          Tharena is built to handle complexity -  quietly, professionally, and at scale.
+        </p>
+
+        {/* Simple, professional bullets (not boxed) */}
+        <ul className="mt-6 list-disc list-inside text-black/80 space-y-1">
+          <li>Selective access to counterparties and lanes</li>
+          <li>Risk aware deal structuring and clean documentation</li>
+          <li>Execution discipline from dispatch to settlement</li>
+          <li>Discreet brokerage with market intelligence loops</li>
+        </ul>
+
+        {/* CTA */}
+        <div className="mt-6">
+          <Link
+            href="/contact?product=b2b-trading"
+            className="bg-green-700 text-white px-4 py-2 rounded hover:bg-green-800"
+          >
+            Start a conversation
+          </Link>
         </div>
-      </section>
+      </div>
+
+</section>
 
 {/* 4) AGRI CONSULTANCY — FULL-BLEED, LEFT-ALIGNED LIKE DHOORVI */}
-<section id="consulting" className="full-bleed bg-gray-50">
-  <div className="px-6 py-12">
+<section id="consulting" className="full-bleed bg-white">
+  <div className="px-6  py-6">
     {/* Top row: content left, image right */}
     <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
       {/* LEFT: CONTENT */}
       <div>
         <h2 className="text-3xl font-semibold text-black">
-          AgriKunba Consulting — Strategy to Scale
+          AgriKunba Consulting — Ideation to Scale
         </h2>
 
         <p className="mt-4 text-black/80">
@@ -253,11 +301,9 @@ export default function Platform() {
       </div>
 
       {/* RIGHT: SINGLE IMAGE (placeholder) */}
-      <div className="relative w-full h-56 md:h-72 rounded-lg border border-gray-300 bg-white shadow-sm">
-        {/* <Image src="/images/platform/consulting-hero.png" alt="AgriKunba Consulting" fill className="object-cover rounded-lg" /> */}
-        <div className="h-full w-full flex items-center justify-center text-gray-600 text-sm">
-          Consulting visual placeholder (workshop / strategy board / warehouse)
-        </div>
+      <div className="relative w-full h-56 md:h-80 rounded-lg border border-gray-300 bg-white shadow-sm">
+         <Image src="/images/consulting-hero.png" alt="AgriKunba Consulting" fill className="object-cover rounded-lg" /> 
+
       </div>
     </div>
 

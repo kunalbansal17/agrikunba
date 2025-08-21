@@ -10,13 +10,12 @@ export default function Home() {
         Hello World
       </p>
       <p className="mt-2">Created by AgriTech Experts and IIT Alumni.</p>
-      <p className="mt-2 italic">Meet KrishiGPT - our agentic AI that resolves queries on the fly.</p>
 
       <div className="mt-8">
 <Link href="/products" className="text-blue-600 underline mr-4">Products</Link>
-<Link href="/platform" className="text-blue-600 underline">Platform</Link>
-<Link href="/about" className="text-blue-600 underline">About Us</Link>
-<Link href="/contact" className="text-blue-600 underline">Contact</Link>
+<Link href="/platform" className="text-blue-600 underline mr-4">Platform</Link>
+<Link href="/about" className="text-blue-600 underline mr-4">About Us</Link>
+<Link href="/contact" className="text-blue-600 underline mr-4">Contact</Link>
 
       </div>
     </main>
