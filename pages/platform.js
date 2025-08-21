@@ -54,42 +54,64 @@ export default function Platform() {
 </section>
 
 
-      {/* 1) TECHNOLOGY PLATFORM (full-bleed) */}
-      <section id="tech" className="full-bleed bg-gray-50">
-        <div className="px-6 pb-10">
-          <div className="border rounded-xl bg-white overflow-hidden">
-            {/* Optional visual/header area */}
-            <div className="relative w-full h-56 sm:h-64 md:h-72 bg-white border-b border-gray-200">
-              {/* <Image src="/images/platform/tech-hero.png" alt="Technology Platform" fill className="object-cover" /> */}
-              <div className="h-full w-full flex items-center justify-center text-gray-600 text-sm">
-                Technology Platform visual placeholder
-              </div>
-            </div>
-
-            <div className="p-6 md:p-8 max-w-6xl mx-auto">
-              <h2 className="text-2xl font-semibold text-black">Technology Platform</h2>
-              <p className="mt-3 text-black/80">
-                The software backbone for agri trade: <strong>digital contracts</strong>, <strong>quality transparency</strong>,
-                <strong> traceability</strong>, and <strong>settlement rails</strong>. Modular, API-first, and built to scale from a single site to a multi-commodity network.
-              </p>
-              <ul className="mt-4 list-disc list-inside text-black/80 space-y-1 text-sm">
-                <li>Smart Contracts with pricing and quality clauses; versioning and approvals</li>
-                <li>Grade and trace lots across flowers, tea, coffee, and fisheries</li>
-                <li>Milestone-based settlement flows linked to contract outcomes</li>
-                <li>Dashboards, exports (CSV/PDF), and clean audit trails</li>
-              </ul>
-
-              <div className="mt-5 flex flex-wrap gap-4">
-                <Link href="/" className="underline text-black">Go to Home</Link>
-                <Link href="/products" className="underline text-black">Explore Products</Link>
-                <Link href="/contact?product=tech-platform" className="bg-green-700 text-white px-4 py-2 rounded hover:bg-green-800">
-                  Book a Demo
-                </Link>
-              </div>
-            </div>
-          </div>
+{/* 1) TECHNOLOGY PLATFORM (full-bleed) */}
+<section id="tech" className="full-bleed bg-gray-50">
+  <div className="px-6 pb-10">
+    {/* container without border */}
+    <div className="rounded-xl bg-gray-50 overflow-hidden">
+      {/* Top visual (unchanged) */}
+      <div className="relative w-full h-56 sm:h-64 md:h-72 bg-gray-50 border-b border-gray-200">
+         <Image src="/images/tech-hero.png" alt="Technology Platform" fill className="object-cover" />
+        <div className="h-full w-full flex items-center justify-center text-gray-600 text-sm">
+          Technology Platform visual placeholder
         </div>
-      </section>
+      </div>
+
+      <div className="p-6 md:p-8 max-w-6xl mx-auto">
+        <h2 className="text-2xl md:text-3xl font-semibold text-black">AgriKunba Tech Stack</h2>
+        {/* subtitle */}
+        <div className="mt-1 text-black/60">
+          The SaaS + GenAI backbone for modern agri trade
+        </div>
+
+        {/* paragraph (kept as-is) */}
+        <p className="mt-3 text-black/80">
+          Our technology platform powers the future of agriculture. We combine SaaS discipline with Generative AI intelligence to enable faster, more transparent, and more resilient trade. 
+          From smart contracts to settlement workflows, our stack reduces friction, enforces trust and scales across markets.
+        </p>
+
+        {/* bulletless feature list, same size as paragraph */}
+        <ul className="mt-4 text-black/80 text-base list-none space-y-2">
+          <li>
+            <span className="font-semibold">GenAI Krishi Bot —</span> Multi lingual Advisory, Insights, and Decision Support powered by generative AI.
+          </li>
+          <li>
+            <span className="font-semibold">Smart Contracts —</span> Smart Contract creation, risk alerts, and compliance monitoring.
+          </li>
+          <li>
+            <span className="font-semibold">Settlement &amp; Traceability —</span> Seamless execution, real-time traceability and trust at scale.
+          </li>
+           <li>
+            <span className="font-semibold"></span> And much more..
+          </li>
+        </ul>
+
+        {/* CTA row */}
+        <div className="mt-6 flex flex-wrap gap-4">
+        
+          <Link
+            href="/products"
+            className="bg-green-700 text-white px-4 py-2 rounded hover:bg-green-800"
+          >
+            Explore All Products
+          </Link>
+            
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
       {/* 2) D2C — DHOORVI (full-bleed, finalized) */}
       <section id="dhoorvi" className="full-bleed bg-white">
@@ -170,36 +192,50 @@ export default function Platform() {
               <div className="relative">
                 <div className="flex gap-6 overflow-x-auto snap-x snap-mandatory pb-3">
                   {/* Slide 1 */}
-      <div className="snap-center shrink-0 w-full max-w-xl h-96 md:max-w-3xl md:h-[30rem] rounded-xl border border-gray-300 bg-white shadow-md flex items-center justify-center text-gray-600 text-sm font-medium">
-              <img
+<div className="snap-center shrink-0 relative
+                w-[88vw] sm:w-[80vw] md:w-[36rem] lg:w-[44rem]
+                aspect-[4/3] sm:aspect-[3/2] md:aspect-[16/9]
+                rounded-xl border border-gray-300 bg-white shadow-md overflow-hidden">              <img
           src="/images/dhoorvi1.png"
           alt="Dhoorvi 1"
           className="w-full h-full object-cover"
         />
                   </div>
                   {/* Slide 2 */}
-                       <div className="snap-center shrink-0 w-full max-w-xl h-96 md:max-w-3xl md:h-[30rem] rounded-xl border border-gray-300 bg-white shadow-md flex items-center justify-center text-gray-600 text-sm font-medium">
-              <img
+<div className="snap-center shrink-0 relative
+                w-[88vw] sm:w-[80vw] md:w-[36rem] lg:w-[44rem]
+                aspect-[4/3] sm:aspect-[3/2] md:aspect-[16/9]
+                rounded-xl border border-gray-300 bg-white shadow-md overflow-hidden">              <img
           src="/images/dhoorvi2.png"
           alt="Dhoorvi 1"
-          className="w-full h-full object-cover"
+       className="absolute inset-0 w-full h-full
+               object-contain md:object-cover"
+    loading="lazy"
         />
                   </div>
                   {/* Slide 3 */}
-                   <div className="snap-center shrink-0 w-full max-w-xl h-96 md:max-w-3xl md:h-[30rem] rounded-xl border border-gray-300 bg-white shadow-md flex items-center justify-center text-gray-600 text-sm font-medium">
-              <img
+ <div className="snap-center shrink-0 relative
+                w-[88vw] sm:w-[80vw] md:w-[36rem] lg:w-[44rem]
+                aspect-[4/3] sm:aspect-[3/2] md:aspect-[16/9]
+                rounded-xl border border-gray-300 bg-white shadow-md overflow-hidden">             <img
           src="/images/dhoorvi3.png"
           alt="Dhoorvi 1"
-          className="w-full h-full object-cover"
+ className="absolute inset-0 w-full h-full
+               object-contain md:object-cover"
+    loading="lazy"
         />
                   </div>
 
                      {/* Slide 4 */}
-                   <div className="snap-center shrink-0 w-full max-w-xl h-96 md:max-w-3xl md:h-[30rem] rounded-xl border border-gray-300 bg-white shadow-md flex items-center justify-center text-gray-600 text-sm font-medium">
-              <img
+<div className="snap-center shrink-0 relative
+                w-[88vw] sm:w-[80vw] md:w-[36rem] lg:w-[44rem]
+                aspect-[4/3] sm:aspect-[3/2] md:aspect-[16/9]
+                rounded-xl border border-gray-300 bg-white shadow-md overflow-hidden">              <img
           src="/images/dhoorvi4.png"
           alt="Dhoorvi 1"
-          className="w-full h-full object-cover"
+    className="absolute inset-0 w-full h-full
+               object-contain md:object-cover"
+    loading="lazy"
         />
                   </div>
                 </div>
@@ -274,16 +310,16 @@ export default function Platform() {
 
 {/* 4) AGRI CONSULTANCY — FULL-BLEED, LEFT-ALIGNED LIKE DHOORVI */}
 <section id="consulting" className="full-bleed bg-white">
-  <div className="px-6  py-6">
+    <div className="px-6 py-10">
     {/* Top row: content left, image right */}
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+ <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
       {/* LEFT: CONTENT */}
       <div>
-        <h2 className="text-3xl font-semibold text-black">
+        <h2 className="text-2xl md:text-3xl font-semibold text-black">
           AgriKunba Consulting — Ideation to Scale
         </h2>
 
-        <p className="mt-4 text-black/80">
+         <p className="mt-2 text-black/80"> 
           We partner with agritech founders, exporters, and food businesses to solve
           complex challenges across supply chains, finance, and markets turning ideas
           into scalable ventures. With on ground feedback and AI driven analysis, we
@@ -403,6 +439,9 @@ export default function Platform() {
     </div>
   </div>
 </section>
+<br/> <br/> 
+ <br/> 
+
     </>
   );
 }
