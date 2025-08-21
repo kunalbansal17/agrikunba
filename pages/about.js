@@ -25,7 +25,7 @@ export default function About() {
 
         <div className="text-lg space-y-5 leading-8">
           <p>
-            <strong>AgriKunba</strong> means “agricultural family”; and that is what we are building.
+            <strong>AgriKunba means “agricultural family”</strong>; and that is what we are building.
             Agriculture isn’t just farmers in fields, it’s a complex web of processors, traders, 
             warehouse operators, transporters, and exporters. Fisheries, poultry and cattle farming are also integral parts of 
             agriculture industry, often neglected as allied services. Today this ecosystem runs on broken contracts,
@@ -33,9 +33,13 @@ export default function About() {
           </p>
 
           <p>
-            We’re changing that. AgriKunba is the full stack agri platform powering contracts & settlements, D2C marketplace, trading, and consulting.
-            By combining AI driven trust systems with practical trade expertise, we bring the entire ecosystem onto one layer, making agriculture faster, transparent, and scalable.
-          </p>
+           We’re changing that. <strong>AgriKunba is the full-stack agri platform powering contracts & settlements, a D2C marketplace, 
+           trading, and consulting</strong>. Our smart contracts automate compliance and resolve disputes before they arise. 
+           The D2C marketplace connects farmers and processors directly with consumers, ensuring traceable and fair trade. 
+           Our trading layer digitizes procurement, warehousing, and logistics, making commodity flows seamless. 
+           And through consulting, we bring AI driven insights and industry expertise to help agri businesses scale. 
+           Together these pillars create one trusted digital backbone that makes agriculture faster, 
+           transparent, and scalable.          </p>
 
           <p>
             Born from agripreneurs and IIT alumni, AgriKunba is the agri family’s AI backbone for

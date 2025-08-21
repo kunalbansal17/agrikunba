@@ -20,8 +20,8 @@ export default function Platform() {
           <div className="text-center">
             <h1 className="text-4xl font-bold text-black">AgriKunba Platforms</h1>
             <p className="mt-4 text-lg text-black/80 max-w-3xl mx-auto">
-              One company. Four engines powering modern agri trade &mdash; Technology Platform, Direct to Consumer Brand,
-              B2B Trading Vertical, and Agri Consultancy.
+              One company. Four engines powering modern agri trade &mdash; Tech Platform, Direct to Consumer Brand,
+              B2B Trading Vertical and Agri Consultancy.
             </p>
           </div>
         </div>
@@ -55,18 +55,21 @@ export default function Platform() {
 
 
 {/* 1) TECHNOLOGY PLATFORM (full-bleed) */}
-<section id="tech" className="full-bleed bg-gray-50">
+<section id="tech" className="full-bleed bg-gray-100">
   <div className="px-6 pb-10">
     {/* container without border */}
-    <div className="rounded-xl bg-gray-50 overflow-hidden">
+    <div className="rounded-xl bg-gray-100 overflow-hidden">
       {/* Top visual (unchanged) */}
-      <div className="relative w-full h-56 sm:h-64 md:h-72 bg-gray-50 border-b border-gray-200">
-         <Image src="/images/tech-hero.png" alt="Technology Platform" fill className="object-cover" />
-        <div className="h-full w-full flex items-center justify-center text-gray-600 text-sm">
-          Technology Platform visual placeholder
-        </div>
-      </div>
-
+<div className="relative w-full h-auto sm:h-64 md:h-72 bg-gray-100 border-b border-gray-200">
+  <Image
+    src="/images/tech-hero.png"
+    alt="Technology Platform"
+    width={1920}   // give natural width
+    height={1080}  // give natural height
+    className="w-full h-auto object-contain"
+  />
+</div>
+<br/>
       <div className="p-6 md:p-8 max-w-6xl mx-auto">
         <h2 className="text-2xl md:text-3xl font-semibold text-black">AgriKunba Tech Stack</h2>
         {/* subtitle */}
@@ -119,7 +122,7 @@ export default function Platform() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
             {/* LEFT: CONTENT */}
             <div>
-              <h2 className="text-3xl font-semibold text-black">Dhoorvi™ &mdash; D2C Brand in Beauty Space</h2>
+              <h2 className="text-2xl md:text-3xl font-semibold text-black">Dhoorvi™ &mdash; D2C Brand in Beauty Space</h2>
 
               <p className="mt-4 text-black/80">
                 Dhoorvi is our direct-to-consumer platform built around provenance. We identify sourcing gaps, partner with
@@ -193,7 +196,7 @@ export default function Platform() {
                 <div className="flex gap-6 overflow-x-auto snap-x snap-mandatory pb-3">
                   {/* Slide 1 */}
 <div className="snap-center shrink-0 relative
-                w-[88vw] sm:w-[80vw] md:w-[36rem] lg:w-[44rem]
+                w-[88vw] sm:w-[80vw] md:w-[36rem] lg:w-[44rem] lg:h-[30rem]
                 aspect-[4/3] sm:aspect-[3/2] md:aspect-[16/9]
                 rounded-xl border border-gray-300 bg-white shadow-md overflow-hidden">              <img
           src="/images/dhoorvi1.png"
@@ -247,7 +250,7 @@ export default function Platform() {
       </section>
 
 {/* 3) THARENA — B2B TRADE (full-bleed, refined) */}
-<section id="b2b" className="full-bleed bg-gray-50 ">
+<section id="b2b" className="full-bleed bg-gray-100 ">
   <p>.</p>
   <div className="px-6 pb-12">
     {/* Container with soft edge (tweak border/shadow as you like) */}
