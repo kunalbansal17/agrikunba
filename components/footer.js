@@ -50,7 +50,7 @@ export default function Footer() {
           <div>
             <div className="font-semibold mb-2">Products</div>
             <ul className="space-y-2">
-              <li><Link href="/products/predictPrices" className="underline">Predict Prices</Link></li>
+              <li><Link href="/predictPrices" className="underline">Predict Prices</Link></li>
               <li><Link href="/products/com-Qual-Calc" className="underline">Com-Qual-Calc</Link></li>
               <li><Link href="/products/agriTrace" className="underline">AgriTrace</Link></li>
               <li><Link href="/products/agentic-AI" className="underline">Agentic AI</Link></li>
