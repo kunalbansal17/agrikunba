@@ -53,7 +53,7 @@ export default function Footer() {
               <li><Link href="/predictPrices" className="underline">Predict Prices</Link></li>
               <li><Link href="/products/com-Qual-Calc" className="underline">Com-Qual-Calc</Link></li>
               <li><Link href="/products/agriTrace" className="underline">AgriTrace</Link></li>
-              <li><Link href="/products/agentic-AI" className="underline">Agentic AI</Link></li>
+              <li><Link href="/krishigpt" className="underline">KrishiGPT</Link></li>
             </ul>
           </div>
 
