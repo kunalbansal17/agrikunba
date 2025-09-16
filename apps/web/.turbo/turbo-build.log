@@ -3,10 +3,15 @@
 > agrikunba@0.1.0 build
 > next build
 
-[1G[0K   [1m[38;2;173;127;168m▲ Next.js 15.5.2[39m[22m
+[1G[0K [33m[1m⚠[22m[39m Invalid next.config.js options detected: 
+ [33m[1m⚠[22m[39m     Unrecognized key(s) in object: 'legacyCss' at "experimental"
+ [33m[1m⚠[22m[39m See more info here: https://nextjs.org/docs/messages/invalid-next-config
+   [1m[38;2;173;127;168m▲ Next.js 15.5.2[39m[22m
    - Environments: .env.local
+   - Experiments (use with caution):
+     [1m✓[22m legacyCss
 
-[?25l [37m[1m [22m[39m Linting and checking validity of types  [36m.[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m..[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m...[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m.[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m..[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m...[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m.[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m..[39m[2K[1G[?25h
+[?25l [37m[1m [22m[39m Linting and checking validity of types  [36m.[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m..[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m...[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m.[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m..[39m[2K[1G[?25h
 ./pages/krishigpt.tsx
 344:6  Warning: React Hook useEffect has a missing dependency: 'order'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
 
@@ -27,21 +32,36 @@
 75:5  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
 
 info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/app/api-reference/config/eslint#disabling-rules
-[?25l [36m.[39m [2K[1G [36m..[39m [2K[1G[?25h    [32m[1m✓[22m[39m Linting and checking validity of types 
+[?25l [36m.[39m [2K[1G [36m..[39m [2K[1G [36m...[39m [2K[1G[?25h    [32m[1m✓[22m[39m Linting and checking validity of types 
  [37m[1m [22m[39m Creating an optimized production build ...
- [32m[1m✓[22m[39m Compiled successfully in 4.0s
+ [32m[1m✓[22m[39m Compiled successfully in 3.4s
 [?25l [37m[1m [22m[39m Collecting page data  [36m.[39m[2K[1G [37m[1m [22m[39m Collecting page data  [36m..[39m[2K[1G [37m[1m [22m[39m Collecting page data  [36m...[39m[2K[1G[?25h [37m[1m [22m[39m Collecting page data     [32m[1m✓[22m[39m Collecting page data 
+[?25l [37m[1m [22m[39m Generating static pages (0/13)  [36m[    ][39m[2K[1G [37m[1m [22m[39m Generating static pages (0/13)  [36m[=   ][39m[2K[1G[?25h [32m[1m✓[22m[39m Generating static pages (13/13)
+[?25l [37m[1m [22m[39m Finalizing page optimization  [36m.[39m[?25l [37m[1m [22m[39m Collecting build traces  [36m.[39m[2K[1G [37m[1m [22m[39m Finalizing page optimization  [36m..[39m[2K[1G [37m[1m [22m[39m Collecting build traces  [36m..[39m[2K[1G [37m[1m [22m[39m Finalizing page optimization  [36m...[39m[2K[1G [37m[1m [22m[39m Collecting build traces  [36m...[39m[2K[1G [37m[1m [22m[39m Finalizing page optimization  [36m.[39m[2K[1G [37m[1m [22m[39m Collecting build traces  [36m.[39m[2K[1G [37m[1m [22m[39m Finalizing page optimization  [36m..[39m[2K[1G [37m[1m [22m[39m Collecting build traces  [36m..[39m[2K[1G [37m[1m [22m[39m Finalizing page optimization  [36m...[39m[2K[1G [37m[1m [22m[39m Collecting build traces  [36m...[39m[2K[1G [37m[1m [22m[39m Finalizing page optimization  [36m.[39m[2K[1G [37m[1m [22m[39m Collecting build traces  [36m.[39m[2K[1G [37m[1m [22m[39m Finalizing page optimization  [36m..[39m[2K[1G [37m[1m [22m[39m Collecting build traces  [36m..[39m[2K[1G [37m[1m [22m[39m Finalizing page optimization  [36m...[39m[2K[1G [37m[1m [22m[39m Collecting build traces  [36m...[39m[2K[1G [37m[1m [22m[39m Finalizing page optimization  [36m.[39m[2K[1G [37m[1m [22m[39m Collecting build traces  [36m.[39m[2K[1G [37m[1m [22m[39m Finalizing page optimization  [36m..[39m[2K[1G [37m[1m [22m[39m Collecting build traces  [36m..[39m[2K[1G[?25h [37m[1m [22m[39m Collecting build traces     [32m[1m✓[22m[39m Collecting build traces 
+[2K[1G[?25h [37m[1m [22m[39m Finalizing page optimization     [32m[1m✓[22m[39m Finalizing page optimization 
 
-> Build optimization failed: found page without a React Component as default export in 
-pages/krishigpt/history
+[4mRoute (pages)[24m                                [4mSize[24m  [4mFirst Load JS[24m  [4m[24m  [4m[24m
+┌ ○ /                                       831 B         [37m[1m100 kB[22m[39m
+├   /_app                                     0 B        [37m[1m99.4 kB[22m[39m
+├ ○ /404                                    180 B        [37m[1m99.6 kB[22m[39m
+├ ○ /about                                1.65 kB         [37m[1m105 kB[22m[39m
+├ ƒ /api/hello                                0 B        [37m[1m99.4 kB[22m[39m
+├ ƒ /api/krishigpt/chat                       0 B        [37m[1m99.4 kB[22m[39m
+├ ○ /contact                              2.02 kB         [37m[1m101 kB[22m[39m
+├ ○ /Header                               1.46 kB         [37m[1m101 kB[22m[39m
+├ ○ /jobs                                 9.83 kB         [37m[1m109 kB[22m[39m
+├ ○ /krishigpt                            7.99 kB         [37m[1m107 kB[22m[39m
+├ ○ /krishigpt/history                      360 B        [37m[1m99.8 kB[22m[39m
+├ ○ /krishigpt/live                       2.95 kB         [37m[1m102 kB[22m[39m
+├ ○ /platform                             4.08 kB         [37m[1m108 kB[22m[39m
+├ ○ /predictPrices                         122 kB         [37m[1m221 kB[22m[39m
+└ ○ /products                               408 B        [37m[1m99.8 kB[22m[39m
++ First Load JS shared by all              [37m[1m107 kB[22m[39m
+  ├ chunks/framework-ea3d558b313aa702.js  57.6 kB
+  ├ chunks/main-10b9a0ecc13ac517.js         37 kB
+  └ other shared chunks (total)           12.1 kB
 
-See https://nextjs.org/docs/messages/page-without-valid-component for more info.
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
 
-[?25h[1G[0K⠙[1G[0K[1mnpm[22m [31merror[39m Lifecycle script `build` failed with error:
-[1G[0K⠙[1G[0K[1mnpm[22m [31merror[39m [94mcode[39m [33m1[39m
-[1G[0K⠙[1G[0K[1mnpm[22m [31merror[39m [94mpath[39m /Users/kunal/agrikunba/apps/web
-[1G[0K⠙[1G[0K[1mnpm[22m [31merror[39m [94mworkspace[39m agrikunba@0.1.0
-[1G[0K⠙[1G[0K[1mnpm[22m [31merror[39m [94mlocation[39m /Users/kunal/agrikunba/apps/web
-[1G[0K⠙[1G[0K[1mnpm[22m [31merror[39m command failed
-[1G[0K⠙[1G[0K[1mnpm[22m [31merror[39m [94mcommand[39m sh -c next build
-[1G[0K⠙[1G[0K
+[?25h[1G[0K⠙[1G[0K

@@ -1,5 +1,13 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
+"paths": {
+  "krishigpt-core": ["packages/krishigpt-core"],
+  "krishigpt-content": ["packages/krishigpt-content"],
+  "krishigpt-tools": ["packages/krishigpt-tools"],
+  "krishigpt-sdk": ["packages/krishigpt-sdk"]
+},
+"types": ["node"],
     "target": "ES2017",
     "lib": [
       "dom",
