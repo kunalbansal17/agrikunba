@@ -1,6 +1,19 @@
 {
+  "/Header": "pages/Header.html",
   "/_app": "pages/_app.js",
-  "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/krishigpt/live": "pages/krishigpt/live.js"
+  "/_error": "pages/_error.js",
+  "/about": "pages/about.html",
+  "/krishigpt": "pages/krishigpt.html",
+  "/krishigpt/history": "pages/krishigpt/history.html",
+  "/krishigpt/live": "pages/krishigpt/live.html",
+  "/platform": "pages/platform.html",
+  "/api/hello": "pages/api/hello.js",
+  "/": "pages/index.html",
+  "/products": "pages/products.html",
+  "/contact": "pages/contact.html",
+  "/predictPrices": "pages/predictPrices.html",
+  "/api/krishigpt/chat": "pages/api/krishigpt/chat.js",
+  "/jobs": "pages/jobs.html",
+  "/404": "pages/404.html"
 }
