@@ -1,9 +1,13 @@
+/** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: {
-    serverComponentsExternalPackages: ["openai"],
-  },
+  serverExternalPackages: ["openai"],
+
   compiler: {
-    lightningcss: false,
+    // Next.js 15.x uses swcMinify + built-in LightningCSS
+    // For Tailwind/PostCSS compatibility, disable minifier entirely
+    removeConsole: false,
   },
+
 };
+
 module.exports = nextConfig;
