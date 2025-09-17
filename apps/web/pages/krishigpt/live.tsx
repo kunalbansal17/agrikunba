@@ -19,7 +19,7 @@ const TEXTS: Record<LangKey, any> = {
   en: {
     title: "🌱 KrishiGPT — India’s Agriculture Guide",
     definition:
-      "KrishiGPT is your multilingual, safe, and farmer-friendly AI advisor. Get instant help on crops, cattle, fisheries, mushrooms, hydroponics, mandi prices, schemes, and more. Always practical. Always label-safe.",
+      "KrishiGPT is your multilingual, safe, and farmer-friendly AI advisor. Get instant help on crops, cattle, fisheries,  mandi prices and more. ",
     suggestions: [
       "🌱 Will it rain tomorrow for my cotton spray?",
       "🐄 My cow is not eating due to heat — what to do?",
@@ -33,7 +33,7 @@ const TEXTS: Record<LangKey, any> = {
   hi: {
     title: "🌱 KrishiGPT — भारत का कृषि मार्गदर्शक",
     definition:
-      "KrishiGPT आपका बहुभाषी, सुरक्षित और किसान-हितैषी एआई सलाहकार है। फसल, पशुधन, मत्स्य, मशरूम, हाइड्रोपोनिक्स, मंडी भाव, योजनाएँ और अधिक पर तुरंत मदद पाएं। हमेशा व्यावहारिक। हमेशा सुरक्षित।",
+      "KrishiGPT आपका बहुभाषी, सुरक्षित और किसान-हितैषी एआई सलाहकार है। फसल, पशुधन, मत्स्य, हाइड्रोपोनिक्स, मंडी भाव और अधिक पर तुरंत मदद पाएं।",
     suggestions: [
       "🌱 क्या कल कपास पर छिड़काव के समय बारिश होगी?",
       "🐄 मेरी गाय गर्मी से नहीं खा रही — क्या करें?",
@@ -47,7 +47,7 @@ const TEXTS: Record<LangKey, any> = {
   mr: {
     title: "🌱 KrishiGPT — भारताचे कृषी मार्गदर्शक",
     definition:
-      "KrishiGPT हा तुमचा बहुभाषिक, सुरक्षित आणि शेतकरी-हितकारी एआय सल्लागार आहे. पिके, जनावरे, मत्स्य, मशरूम, हायड्रोपोनिक्स, बाजारभाव, योजना यावर त्वरित मदत मिळवा. नेहमी व्यावहारिक. नेहमी सुरक्षित.",
+      "KrishiGPT हा तुमचा बहुभाषिक, सुरक्षित आणि शेतकरी-हितकारी एआय सल्लागार आहे. पिके, जनावरे, मत्स्य, हायड्रोपोनिक्स, बाजारभाव यावर त्वरित मदत मिळवा.",
     suggestions: [
       "🌱 उद्या कापूस फवारणीला पाऊस पडेल का?",
       "🐄 उष्णतेमुळे माझी गाय खात नाही — काय करावे?",
@@ -134,8 +134,11 @@ export default function KrishiGPTApp() {
   }
 
   return (
-    
-    <div className="flex flex-col items-center justify-start min-h-screen bg-gray-50 p-4 md:p-6">
+ 
+ //    <div className="w-full bg-white shadow-md overflow-y-auto mb-4 h-[70vh] md:h-[70vh] md:max-w-6xl md:rounded-lg md:p-6 rounded-none px-4 py-4">
+ 
+
+    <div className="flex flex-col  shadow-md items-center justify-start min-h-screen md:rounded-lg  bg-gray-50 p-4 md:p-6">
       {/* Title after first message */}
 {started && (
   <h2 className="text-lg font-semibold text-gray-700 mb-3">
@@ -162,7 +165,7 @@ export default function KrishiGPTApp() {
  <div className="w-full bg-white shadow-md overflow-y-auto mb-4 h-[70vh] md:h-[70vh] md:max-w-6xl md:rounded-lg md:p-6 rounded-none px-4 py-4">
        {messages.length === 0 ? (
           <div className="flex flex-col items-center justify-center h-full text-center text-gray-400">
-            <div className="text-5xl mb-4">🌱</div>
+            <div className="text-5xl mb-4">🤖🌾🐄🌦️🐟</div>
             <h2 className="text-xl font-semibold">{TEXTS[lang].title}</h2>
             <p className="mt-2 max-w-md text-sm">{TEXTS[lang].definition}</p>
             <div className="mt-4 grid grid-cols-2 md:grid-cols-4 gap-3">

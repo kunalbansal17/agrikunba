@@ -2,6 +2,5 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/krishigpt/live": "pages/krishigpt/live.js",
-  "/api/krishigpt/chat": "pages/api/krishigpt/chat.js"
+  "/krishigpt/live": "pages/krishigpt/live.js"
 }
