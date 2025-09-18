@@ -66,6 +66,9 @@ export default function KrishiGPTApp() {
   const [lang, setLang] = useState<LangKey>("en");
   const [loading, setLoading] = useState(false);
     const [started, setStarted] = useState(false); // 👈 new state
+    const [suggestions, setSuggestions] = useState<string[]>([]);
+    const [lastAssistantId, setLastAssistantId] = useState<string | null>(null);
+
   const recognitionRef = useRef<SpeechRecognition | null>(null);
 
   // Handle sending message
@@ -74,17 +77,31 @@ export default function KrishiGPTApp() {
     if (!input.trim() || loading) return;
 
      if (!started) setStarted(true); // 👈 mark chat started
-
+  
     const base = [...messages, { role: "user" as const, content: input }];
     setMessages(base);
     setInput("");
     setLoading(true);
 
+// add once in the file
+async function getBrowserLocation(): Promise<{lat:number; lon:number} | null> {
+  if (!("geolocation" in navigator)) return null;
+  return new Promise((resolve) => {
+    navigator.geolocation.getCurrentPosition(
+      (pos) => resolve({ lat: pos.coords.latitude, lon: pos.coords.longitude }),
+      () => resolve(null),
+      { enableHighAccuracy: true, timeout: 8000 }
+    );
+  });
+}
+
+
     try {
+      const loc = await getBrowserLocation(); // may be null; that's fine
       const resp = await fetch("/api/krishigpt/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message: input, lang }),
+        body: JSON.stringify({ message: input, lang:lang, loc }),
       });
 
       if (!resp.body) {
@@ -97,6 +114,8 @@ export default function KrishiGPTApp() {
       setMessages((prev) => [...prev, { role: "assistant", content: "" }]);
       const reader = resp.body.getReader();
       const decoder = new TextDecoder();
+   const aId = resp.headers.get("x-assistant-id");
+    if (aId) setLastAssistantId(aId);
 
       let done = false;
       while (!done) {
@@ -113,6 +132,18 @@ export default function KrishiGPTApp() {
           });
         }
       }
+
+if (lastAssistantId) {
+  try {
+    const suggResp = await fetch(`/api/krishigpt/suggestions?assistantId=${lastAssistantId}`);
+    if (suggResp.ok) {
+      const { suggestions } = await suggResp.json();
+      setSuggestions(suggestions || []);
+    }
+  } catch {}
+}
+
+
     } finally {
       setLoading(false);
     }
@@ -120,6 +151,7 @@ export default function KrishiGPTApp() {
 
   // Voice input
   function startVoiceInput() {
+    
     const SpeechRecognition = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
     if (!SpeechRecognition) return alert("Speech recognition not supported");
 
@@ -159,7 +191,13 @@ export default function KrishiGPTApp() {
             {l.label}
           </button>
         ))}
+
+
+        
       </div>
+
+
+      
 
       {/* Chat box */}
  <div className="w-full bg-white shadow-md overflow-y-auto mb-4 h-[70vh] md:h-[70vh] md:max-w-6xl md:rounded-lg md:p-6 rounded-none px-4 py-4">
@@ -193,6 +231,20 @@ export default function KrishiGPTApp() {
             </div>
           ))
         )}
+{suggestions.length > 0 && (
+  <div className="flex flex-wrap gap-2 mt-2">
+    {suggestions.map((s, idx) => (
+      <button
+        key={idx}
+        onClick={() => setInput(s)}
+        className="rounded-full bg-emerald-50 text-emerald-700 px-3 py-1 text-sm hover:bg-emerald-100"
+      >
+        {s}
+      </button>
+    ))}
+  </div>
+)}
+
         {loading && <div className="text-gray-400 text-sm">Thinking…</div>}
       </div>
 

@@ -4,9 +4,6 @@ const path = require("path");
 const nextConfig = {
   serverExternalPackages: ["openai"],
 
-  experimental: {
-    legacyCss: true, // ✅ force PostCSS instead of oxide/lightningcss
-  },
 
   webpack: (config) => {
     config.resolve.alias["@"] = path.resolve(__dirname);

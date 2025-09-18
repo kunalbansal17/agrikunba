@@ -76,4 +76,16 @@ type ApiRouteConfig = {
   handler satisfies ApiRouteConfig
 }
 
+// Validate ../../pages/api/krishigpt/suggestions.ts
+{
+  const handler = {} as typeof import("../../pages/api/krishigpt/suggestions.js")
+  handler satisfies ApiRouteConfig
+}
+
+// Validate ../../pages/api/krishigpt/weather.ts
+{
+  const handler = {} as typeof import("../../pages/api/krishigpt/weather.js")
+  handler satisfies ApiRouteConfig
+}
+
 
