@@ -47,10 +47,8 @@ export default function Products() {
           {/* ComMatrix */}
           <div className="rounded-3xl overflow-hidden shadow-sm ring-1 ring-gray-200 bg-gradient-to-b from-sky-100 to-white min-h-[28rem] flex flex-col">
             <div className="relative h-48 md:h-56 w-full">
-              {/* <Image src="/images/commatrix-card.png" alt="ComMatrix" fill className="object-cover" /> */}
-              <div className="absolute inset-0 flex items-center justify-center text-gray-600 text-sm">
-                Image placeholder
-              </div>
+              { <Image src="/images/commatrix-card.png" alt="ComMatrix" fill className="object-cover" /> }
+   
             </div>
             <div className="p-6 flex-1 flex flex-col">
               <div className="text-xs font-medium text-sky-700 uppercase tracking-wide">
@@ -73,10 +71,8 @@ export default function Products() {
           {/* AgriTrace */}
           <div className="rounded-3xl overflow-hidden shadow-sm ring-1 ring-gray-200 bg-gradient-to-b from-teal-100 to-white min-h-[28rem] flex flex-col">
             <div className="relative h-48 md:h-56 w-full">
-              {/* <Image src="/images/agritrace-card.png" alt="AgriTrace" fill className="object-cover" /> */}
-              <div className="absolute inset-0 flex items-center justify-center text-gray-600 text-sm">
-                Image placeholder
-              </div>
+              {<Image src="/images/agritrace-card.png" alt="AgriTrace" fill className="object-cover" /> }
+  
             </div>
             <div className="p-6 flex-1 flex flex-col">
               <div className="text-xs font-medium text-teal-700 uppercase tracking-wide">

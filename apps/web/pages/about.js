@@ -25,7 +25,7 @@ export default function About() {
 
         <div className="text-lg space-y-5 leading-8">
           <p>
-            <strong>AgriKunba</strong> means "agricultural family"; and that is what we are building.
+            <strong>AgriKunba</strong> means 'agricultural family'; and that is what we are building.
     Agriculture is not only farmers in fields; it is a network of processors, traders, warehouse
     operators, transporters, FPOs, bankers, exporters, fisheries, poultry, and cattle systems.
     Today a lot of this runs on broken contracts, disputes, and manual calls. 
