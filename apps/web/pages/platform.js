@@ -20,8 +20,8 @@ export default function Platform() {
           <div className="text-center">
             <h1 className="text-4xl font-bold text-black">AgriKunba Platforms</h1>
             <p className="mt-4 text-lg text-black/80 max-w-3xl mx-auto">
-              One company. Four engines powering modern agri trade &mdash; Tech Platform, Direct to Consumer Brand,
-              B2B Trading Vertical and Agri Consultancy.
+              One company. Four engines powering modern agri trade &mdash; Tech Powerhouse, Direct to Consumer Brand,
+              B2B Trading Vertical and Agri Consultancy
             </p>
           </div>
         </div>
@@ -34,7 +34,7 @@ export default function Platform() {
       <div className="rounded-xl border border-gray-300 bg-white shadow-md p-5">
         <h3 className="font-semibold text-black">CONNECTED STACK</h3>
         <p className="mt-2 text-black/60">
-          Contracts, Quality, Traceability, and Settlement &mdash; One Stack. Use a single module or the full suite.
+          KrishiGPT Chat Bot, Contracts, Quality, Traceability, and Settlement -  One Stack.
         </p>
       </div>
       <div className="rounded-xl border border-gray-300 bg-white shadow-md p-5">

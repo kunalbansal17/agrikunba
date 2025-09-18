@@ -25,27 +25,32 @@ export default function About() {
 
         <div className="text-lg space-y-5 leading-8">
           <p>
-            <strong>AgriKunba means “agricultural family”</strong>; and that is what we are building.
-            Agriculture isn’t just farmers in fields, it’s a complex web of processors, traders, 
-            warehouse operators, transporters, and exporters. Fisheries, poultry and cattle farming are also integral parts of 
-            agriculture industry, often neglected as allied services. Today this ecosystem runs on broken contracts,
-            disputes, and manual calls. 
+            <strong>AgriKunba</strong> means "agricultural family"; and that is what we are building.
+    Agriculture is not only farmers in fields; it is a network of processors, traders, warehouse
+    operators, transporters, FPOs, bankers, exporters, fisheries, poultry, and cattle systems.
+    Today a lot of this runs on broken contracts, disputes, and manual calls. 
           </p>
 
-          <p>
-           We’re changing that. <strong>AgriKunba is the full-stack agri platform powering contracts & settlements, a D2C marketplace, 
-           trading, and consulting</strong>. Our smart contracts automate compliance and resolve disputes before they arise. 
-           The D2C marketplace connects farmers and processors directly with consumers, ensuring traceable and fair trade. 
-           Our trading layer digitizes procurement, warehousing, and logistics, making commodity flows seamless. 
-           And through consulting, we bring AI driven insights and industry expertise to help agri businesses scale. 
-           Together these pillars create one trusted digital backbone that makes agriculture faster, 
-           transparent, and scalable.          </p>
+           <p>
+    We are changing that. AgriKunba is a full-stack agri platform that powers contracts and
+    settlements, a D2C marketplace, trading, and consulting. Our smart contracts automate compliance
+    and resolve disputes before they arise; our trading rails digitize procurement, warehousing, and
+    logistics; and our consulting brings AI-driven insight with on-ground execution.
+  </p>
 
-          <p>
-            Born from agripreneurs and IIT alumni, AgriKunba is the agri family’s AI backbone for
-            trade and settlement - practical, scalable, and built for the next decade of global
-            agriculture.
-          </p>
+         <p>
+    <strong>KrishiGPT</strong> is our multilingual AI co-pilot for the entire value chain. Farmers and
+    fishermen ask crop or price questions; transporters and warehouse teams update milestones; traders and
+    processors check QC thresholds and clauses; bankers and exporters get clean summaries and documents.
+    KrishiGPT drafts contract language, explains quality deviations in plain words, flags risk, and routes
+    actions into workflows — all in chat, across web and mobile.
+  </p>
+
+<p>
+    Born from agripreneurs and IIT alumni, AgriKunba is the agri family’s AI backbone for trade and
+    settlement — practical, scalable, and built for the next decade of global agriculture.
+  </p>
+
 
           <p>
             <u><strong>Indian agriculture at a glance (2024–25):</strong></u><br />

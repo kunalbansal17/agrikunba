@@ -2,19 +2,6 @@
 
 import React, { useEffect, useRef, useState } from "react";
 
-/**
- * KRISHIGPT — INVESTOR DEMO v2 (INTERACTIVE)
- * ------------------------------------------------------------------
- * Paste into:  pages/krishigpt.tsx  OR  app/krishigpt/page.tsx
- * Tailwind required. No external UI libraries. No video.
- * What’s new:
- *  - Minimal green, clean white layout.
- *  - BIG phone mock with FULL chat viewport.
- *  - Q appears first, then A (4–5 lines). Autoplay or click to control.
- *  - EVERYTHING is clickable: language chips, coverage chips, Answer‑style cards,
- *    Government help tiles — clicking updates the phone demo instantly.
- * ------------------------------------------------------------------
- */
 
 // Languages
 const LANGS = [

@@ -41,19 +41,20 @@ export default function Footer() {
             <ul className="space-y-2">
               <li><Link href="/about" className="underline">About Us</Link></li>
               <li><Link href="/contact" className="underline">Contact</Link></li>
-              <li><Link href="/blog" className="underline">Blog</Link></li>
+      {/*        <li><Link href="/blog" className="underline">Blog</Link></li> 
               <li><Link href="/terms" className="underline">Terms</Link></li>
-            </ul>
+       */}     </ul>
           </div>
 
           {/* Products */}
           <div>
             <div className="font-semibold mb-2">Products</div>
             <ul className="space-y-2">
-              <li><Link href="/predictPrices" className="underline">Predict Prices</Link></li>
-              <li><Link href="/products/com-Qual-Calc" className="underline">Com-Qual-Calc</Link></li>
-              <li><Link href="/products/agriTrace" className="underline">AgriTrace</Link></li>
-              <li><Link href="/krishigpt" className="underline">KrishiGPT</Link></li>
+               <li><Link href="/krishigpt/live" className="underline">KrishiGPT</Link></li>
+              <li><Link href="/commatrix" className="underline">Commodity Matrix</Link></li>
+           {/*   <li><Link href="/products/com-Qual-Calc" className="underline">Com-Qual-Calc</Link></li> */}
+              <li><Link href="/agritrace" className="underline">AgriTrace</Link></li>
+            
             </ul>
           </div>
 
