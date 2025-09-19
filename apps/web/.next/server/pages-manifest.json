@@ -1,22 +1,8 @@
 {
-  "/Header": "pages/Header.html",
-  "/about": "pages/about.html",
   "/_app": "pages/_app.js",
-  "/_document": "pages/_document.js",
-  "/api/krishigpt/suggestions": "pages/api/krishigpt/suggestions.js",
-  "/api/krishigpt/weather": "pages/api/krishigpt/weather.js",
-  "/api/hello": "pages/api/hello.js",
   "/_error": "pages/_error.js",
-  "/": "pages/index.html",
-  "/krishigpt": "pages/krishigpt.html",
-  "/krishigpt/live": "pages/krishigpt/live.html",
-  "/contact": "pages/contact.html",
-  "/agritrace": "pages/agritrace.html",
-  "/commatrix": "pages/commatrix.html",
-  "/platform": "pages/platform.html",
-  "/products": "pages/products.html",
-  "/krishigpt/history": "pages/krishigpt/history.js",
+  "/_document": "pages/_document.js",
   "/api/krishigpt/chat": "pages/api/krishigpt/chat.js",
-  "/jobs": "pages/jobs.html",
-  "/404": "pages/404.html"
+  "/api/krishigpt/suggestions": "pages/api/krishigpt/suggestions.js",
+  "/krishigpt/live": "pages/krishigpt/live.js"
 }

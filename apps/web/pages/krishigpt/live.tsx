@@ -95,6 +95,9 @@ async function getBrowserLocation(): Promise<{lat:number; lon:number} | null> {
   });
 }
 
+//logging
+const sendStart = Date.now();
+
 
     try {
       const loc = await getBrowserLocation(); // may be null; that's fine
@@ -103,7 +106,7 @@ async function getBrowserLocation(): Promise<{lat:number; lon:number} | null> {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ message: input, lang:lang, loc }),
       });
-
+console.log("⏱ Response started in", Date.now() - sendStart, "ms");
       if (!resp.body) {
         const txt = await resp.text();
         setMessages([...base, { role: "assistant", content: txt }]);

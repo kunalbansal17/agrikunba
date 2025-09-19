@@ -11,6 +11,9 @@ import {
 
 export const config = { api: { bodyParser: { sizeLimit: "1mb" } } };
 
+//logging time
+const t0 = Date.now();
+
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY! });
 
 /** 🔧 KrishiGPT system prompt */
@@ -56,27 +59,6 @@ function ensureVisitorId(req: NextApiRequest, res: NextApiResponse, incoming?: s
   return vid;
 }
 
-async function saveContextMessage(data: {
-  chatId: string;
-  model: string;
-  content: any;
-  role?: "SYSTEM" | "ASSISTANT";
-}) {
-  const payload = {
-    chatId: data.chatId,
-    role: (data.role ?? "SYSTEM") as any,
-    model: data.model,
-    content: typeof data.content === "string" ? data.content : JSON.stringify(data.content),
-  };
-  try {
-    await prisma.message.create({ data: payload as any });
-  } catch {
-    await prisma.message.create({
-      data: { ...payload, role: "ASSISTANT" as any } as any,
-    });
-  }
-}
-
 // ———————————————————————————————————————————————————————————————
 // Route
 // ———————————————————————————————————————————————————————————————
@@ -101,41 +83,42 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   try {
     // 1) Ensure visitorId and Chat row
     const vid = ensureVisitorId(req, res, visitorId ?? null);
+
     let chat =
       incomingChatId
         ? await prisma.chat.findUnique({ where: { id: incomingChatId } })
         : null;
+
     if (!chat) {
       chat = await prisma.chat.create({
-        data: {
-          visitorId: vid,
-          lang,
-        },
+        data: { visitorId: vid, lang },
       });
     }
 
-    // 2) Save user message
-    await prisma.message.create({
-      data: {
-        chatId: chat.id,
-        role: "USER" as any,
-        content: message,
-        model: "user",
-      },
-    });
+    // 2) Pre-create assistant row (needed for streaming)
+    const [userRow, assistantRow] = await prisma.$transaction([
+      prisma.message.create({
+        data: {
+          chatId: chat.id,
+          role: "USER" as any,
+          content: message,
+          model: "user",
+        },
+      }),
+      prisma.message.create({
+        data: {
+          chatId: chat.id,
+          role: "ASSISTANT" as any,
+          content: "",
+          model: "gpt-4o-mini",
+        },
+        select: { id: true },
+      }),
+    ]);
 
-    // 3) Assistant placeholder
-    const assistantRow = await prisma.message.create({
-      data: {
-        chatId: chat.id,
-        role: "ASSISTANT" as any,
-        content: "",
-        model: "gpt-4o-mini",
-      },
-      select: { id: true },
-    });
+    console.log("Intent detection:", Date.now() - t0, "ms");
 
-    // 4) Detect weather intent (multilingual)
+    // 3) Detect weather intent
     const detect = await openai.chat.completions.create({
       model: "gpt-4o-mini",
       temperature: 0.0,
@@ -161,8 +144,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         {
           role: "system",
           content:
-            "Infer if answering requires weather. Handle any language. " +
-            "Extract timeframe if user says 'today', 'tomorrow', 'next 48h'.",
+            "Infer if answering requires weather. Handle any language. Extract timeframe (today/tomorrow/next_48h).",
         },
         { role: "user", content: message },
       ],
@@ -189,7 +171,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       wantWeather = false;
     }
 
-    // 5) LOCATION: reuse last if none new
+    // 4) LOCATION — reuse last if none new
     const pinFromText = extractPincode(message);
     let lat = loc?.lat;
     let lon = loc?.lon;
@@ -201,11 +183,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         lat = hit.latitude;
         lon = hit.longitude;
         label = [hit.name, hit.admin1].filter(Boolean).join(", ");
-        await saveContextMessage({
-          chatId: chat.id,
-          model: "ctx:location",
-          content: { source: "place_text", place_text: placeText, label, country: hit.country, lat, lon, pincode: pinFromText || null, ts: new Date().toISOString() },
-        });
       }
     } else if (lat == null || lon == null) {
       const lastLoc = await prisma.message.findFirst({
@@ -220,8 +197,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       }
     }
 
-    // 6) WEATHER
+    // 5) WEATHER snapshot (non-blocking save later)
     let weatherSystem = "";
+    let weatherPayload: any = null;
+
     if (wantWeather && lat != null && lon != null) {
       const fc = await fetchForecast(lat, lon);
       if (fc) {
@@ -233,21 +212,27 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           summary = `🌧️ Tomorrow in ${fc.place}: rain chance ${fc.today.precipProbMax}%, total ${fc.today.precipSumMm}mm.`;
         }
         const decision = activity !== "none" ? goNoGo(fc, activity) : null;
+
         weatherSystem =
           `[WEATHER]\n${summary}\n` +
           (decision ? `Decision for ${activity}: ${decision.decision} — ${decision.reason}\n` : ``);
-        await saveContextMessage({
-          chatId: chat.id,
-          model: "ctx:weather",
-          content: { label: fc.place, summary, activity, decision, ts: new Date().toISOString() },
-        });
+
+        weatherPayload = {
+          label: fc.place,
+          summary,
+          activity,
+          decision,
+          ts: new Date().toISOString(),
+        };
       }
     }
 
-    // 7) Final system prompt
+    console.log("Weather lookup:", Date.now() - t0, "ms");
+
+    // 6) Final system prompt
     const systemPrompt = `${BASE_PROMPT}\n${weatherSystem}\nKeep output clean.`;
 
-    // 8) Stream
+    // 7) Stream to client immediately
     res.writeHead(200, {
       "Content-Type": "text/plain; charset=utf-8",
       "Transfer-Encoding": "chunked",
@@ -276,58 +261,87 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         res.write(delta);
       }
     }
+    res.end();
 
-    await prisma.message.update({
-      where: { id: assistantRow.id },
-      data: { content: full },
-    });
+    console.log("Started streaming at:", Date.now() - t0, "ms");
 
-    // 9) Suggestions
-    try {
-      const suggRes = await openai.chat.completions.create({
-        model: "gpt-4o-mini",
-        temperature: 0.2,
-        max_tokens: 120,
-        response_format: {
-          type: "json_schema",
-          json_schema: {
-            name: "Suggestions",
-            schema: {
-              type: "object",
-              properties: {
-                suggestions: {
-                  type: "array",
-                  items: { type: "string" },
-                  minItems: 3,
-                  maxItems: 3,
+    // 8) Persist context/weather/suggestions async (fire-and-forget)
+    setImmediate(async () => {
+      try {
+        await prisma.$transaction([
+          prisma.message.update({
+            where: { id: assistantRow.id },
+            data: { content: full },
+          }),
+          ...(weatherPayload
+            ? [
+                prisma.message.create({
+                  data: {
+                    chatId: chat.id,
+                    role: "SYSTEM",
+                    model: "ctx:weather",
+                    content: JSON.stringify(weatherPayload),
+                  },
+                }),
+              ]
+            : []),
+        ]);
+
+        // Suggestions async
+        const suggRes = await openai.chat.completions.create({
+          model: "gpt-4o-mini",
+          temperature: 0.2,
+          max_tokens: 120,
+          response_format: {
+            type: "json_schema",
+            json_schema: {
+              name: "Suggestions",
+              schema: {
+                type: "object",
+                properties: {
+                  suggestions: {
+                    type: "array",
+                    items: { type: "string" },
+                    minItems: 3,
+                    maxItems: 3,
+                  },
                 },
+                required: ["suggestions"],
+                additionalProperties: false,
               },
-              required: ["suggestions"],
-              additionalProperties: false,
             },
           },
-        },
-        messages: [
-          {
-            role: "system",
-            content:
-              "Generate 3 short follow-up questions in the same language. Under 12 words. Use real scheme/crop/place names when possible.",
-          },
-          { role: "user", content: `Language: ${lang}\nUser asked: ${message}\nAssistant replied: ${full}` },
-        ],
-      });
-      const payload = JSON.parse(suggRes.choices[0]?.message?.content ?? "{}");
-      const suggestions: string[] = Array.isArray(payload?.suggestions) ? payload.suggestions : [];
-      if (suggestions.length === 3) {
-        await saveContextMessage({
-          chatId: chat.id,
-          model: "suggestions:v1",
-          content: { parentAssistantId: assistantRow.id, suggestions, ts: new Date().toISOString() },
+          messages: [
+            {
+              role: "system",
+              content:
+                "Generate 3 short follow-up questions in the same language. Under 12 words. Use real scheme/crop/place names when possible.",
+            },
+            { role: "user", content: `Language: ${lang}\nUser asked: ${message}\nAssistant replied: ${full}` },
+          ],
         });
+        const payload = JSON.parse(suggRes.choices[0]?.message?.content ?? "{}");
+        const suggestions: string[] = Array.isArray(payload?.suggestions) ? payload.suggestions : [];
+        if (suggestions.length === 3) {
+          await prisma.message.create({
+            data: {
+              chatId: chat.id,
+              role: "SYSTEM",
+              model: "suggestions:v1",
+              content: JSON.stringify({
+                parentAssistantId: assistantRow.id,
+                suggestions,
+                ts: new Date().toISOString(),
+              }),
+            },
+          });
+        }
+      } catch (err) {
+        console.error("Background persistence failed:", err);
       }
-    } catch {}
+    });
 
-    res.end();
+    console.log("Total:", Date.now() - t0, "ms");
   } catch (err: any) {
     try {
       res.write(`\n\nSorry, I hit an error. ${String(err?.message ?? err)} 😔`);
