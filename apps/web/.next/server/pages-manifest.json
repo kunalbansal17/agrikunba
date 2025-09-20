@@ -2,7 +2,10 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/api/krishigpt/chat": "pages/api/krishigpt/chat.js",
-  "/api/krishigpt/suggestions": "pages/api/krishigpt/suggestions.js",
-  "/krishigpt/live": "pages/krishigpt/live.js"
+  "/agritrace": "pages/agritrace.js",
+  "/": "pages/index.js",
+  "/products": "pages/products.js",
+  "/commatrix": "pages/commatrix.js",
+  "/krishigpt/live": "pages/krishigpt/live.js",
+  "/about": "pages/about.js"
 }
