@@ -2,10 +2,7 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/agritrace": "pages/agritrace.js",
-  "/": "pages/index.js",
-  "/products": "pages/products.js",
-  "/commatrix": "pages/commatrix.js",
-  "/krishigpt/live": "pages/krishigpt/live.js",
-  "/about": "pages/about.js"
+  "/api/intent-search/suggest": "pages/api/intent-search/suggest.js",
+  "/api/intent-search/search": "pages/api/intent-search/search.js",
+  "/intent-search": "pages/intent-search.js"
 }

@@ -46,6 +46,12 @@ type ApiRouteConfig = {
   handler satisfies PagesPageConfig
 }
 
+// Validate ../../pages/intent-search.tsx
+{
+  const handler = {} as typeof import("../../pages/intent-search.js")
+  handler satisfies PagesPageConfig
+}
+
 // Validate ../../pages/jobs.tsx
 {
   const handler = {} as typeof import("../../pages/jobs.js")
@@ -68,6 +74,30 @@ type ApiRouteConfig = {
 {
   const handler = {} as typeof import("../../pages/krishigpt/live.js")
   handler satisfies PagesPageConfig
+}
+
+// Validate ../../pages/api/intent-search/events.ts
+{
+  const handler = {} as typeof import("../../pages/api/intent-search/events.js")
+  handler satisfies ApiRouteConfig
+}
+
+// Validate ../../pages/api/intent-search/ingest.ts
+{
+  const handler = {} as typeof import("../../pages/api/intent-search/ingest.js")
+  handler satisfies ApiRouteConfig
+}
+
+// Validate ../../pages/api/intent-search/search.ts
+{
+  const handler = {} as typeof import("../../pages/api/intent-search/search.js")
+  handler satisfies ApiRouteConfig
+}
+
+// Validate ../../pages/api/intent-search/suggest.ts
+{
+  const handler = {} as typeof import("../../pages/api/intent-search/suggest.js")
+  handler satisfies ApiRouteConfig
 }
 
 // Validate ../../pages/api/krishigpt/chat.ts
