@@ -1,3 +1,5 @@
+"use server"; // tells Next.js this module must never go client-side
+
 import pg from "pg";
 
 export const pgpool = new pg.Pool({
