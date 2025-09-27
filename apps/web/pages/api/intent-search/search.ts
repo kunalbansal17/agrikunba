@@ -7,7 +7,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const results = await hybridSearch(params);
     return res.status(200).json(results);
   } catch (e: any) {
-    console.error("Search API error:", e);
-    return res.status(500).json({ error: e.message });
+    console.error("❌ Search API error:", e);  // full error in logs
+    return res.status(500).json({
+      error: e.message,
+      stack: e.stack,   // 👈 send stack trace back to response
+    });
   }
 }

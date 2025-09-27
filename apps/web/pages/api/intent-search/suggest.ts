@@ -14,7 +14,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     const client = await pgpool.connect();
     try {
-      let { rows } = await client.query(
+      const { rows } = await client.query(
         `select id, title
          from products
          where site_id = $1::uuid
@@ -23,29 +23,15 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
          limit 10`,
         [site_id, q + "%"]
       );
-
-      if (rows.length === 0) {
-        const translated = await translateQueryIfNeeded(q);
-        if (translated && translated !== q) {
-          const { rows: trRows } = await client.query(
-            `select id, title
-             from products
-             where site_id = $1::uuid
-               and title ilike $2
-             order by title asc
-             limit 10`,
-            [site_id, translated + "%"]
-          );
-          rows = trRows;
-        }
-      }
-
       return res.status(200).json({ suggestions: rows });
     } finally {
       client.release();
     }
   } catch (e: any) {
-    console.error("Suggest API error:", e);
-    return res.status(500).json({ error: e.message });
+    console.error("❌ Suggest API error:", e);
+    return res.status(500).json({
+      error: e.message,
+      stack: e.stack,
+    });
   }
 }
