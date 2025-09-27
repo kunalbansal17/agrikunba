@@ -52,6 +52,12 @@ type ApiRouteConfig = {
   handler satisfies PagesPageConfig
 }
 
+// Validate ../../pages/intent-search/products.tsx
+{
+  const handler = {} as typeof import("../../pages/intent-search/products.js")
+  handler satisfies PagesPageConfig
+}
+
 // Validate ../../pages/jobs.tsx
 {
   const handler = {} as typeof import("../../pages/jobs.js")
@@ -91,6 +97,12 @@ type ApiRouteConfig = {
 // Validate ../../pages/api/intent-search/ingest.ts
 {
   const handler = {} as typeof import("../../pages/api/intent-search/ingest.js")
+  handler satisfies ApiRouteConfig
+}
+
+// Validate ../../pages/api/intent-search/products.ts
+{
+  const handler = {} as typeof import("../../pages/api/intent-search/products.js")
   handler satisfies ApiRouteConfig
 }
 
