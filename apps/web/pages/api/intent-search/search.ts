@@ -1,5 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import { hybridSearch } from "@/lib/intent-search/search";
+import { pgpool } from "@/lib/intent-search/db";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   try {

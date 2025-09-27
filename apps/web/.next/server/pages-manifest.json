@@ -2,7 +2,5 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/api/intent-search/suggest": "pages/api/intent-search/suggest.js",
-  "/api/intent-search/search": "pages/api/intent-search/search.js",
-  "/intent-search": "pages/intent-search.js"
+  "/api/intent-search/health": "pages/api/intent-search/health.js"
 }
